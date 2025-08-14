@@ -20,7 +20,7 @@ cards.forEach((card) => observer.observe(card));
 
 // HEADER ROTATING CUBE
 
-const apiKey = "5HhHvNYzcFIxoS1aQj4OuHcBljxsB2qX"; // 5HhHvNYzcFIxoS1aQj4OuHcBljxsB2qX  or  FuhrDPVzLFh29QtKi5XdpyGArQxzHdvH
+const apiKey = "-5HhHvNYzcFIxoS1aQj4OuHcBljxsB2qX"; // 5HhHvNYzcFIxoS1aQj4OuHcBljxsB2qX  or  FuhrDPVzLFh29QtKi5XdpyGArQxzHdvH
 const tag = "cute";
 
 function loadGif(faceId) {

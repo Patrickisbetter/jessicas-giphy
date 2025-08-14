@@ -1,0 +1,679 @@
+// PATRICK'S CODE BELOW
+
+/*              ____
+        /   ___/# # \ 
+3      O•   ___     /
+        \      ````
+*/
+
+// NOTE: THIS IS THE CODE RESPONSIBLE FOR OUR GIF DISPLAYERS; COMMENTED DISABLES THE FEATURE, UNCOMMENTED ENABLES IT
+let url = "https://api.giphy.com/v1/gifs/trending?api_key=hvxAtComDAs7JUBaPoUeqJ6miDyGoLL3&limit=60&offset=0&rating=r&bundle=messaging_non_clips";
+
+// API DISPLAY UI 1 -[
+const card_offset = 120;
+const animation_time = 0.4;
+// ]
+
+// API DISPLAY UI 2 -[
+const card_size_relative_to = [10, "width"]; // size changes relative to the height||width of parent element
+// ]
+
+// API DISPLAY UI 3 -[
+const divisions = 4;
+const lined_items = 10;
+// ]
+
+
+let other_data;
+let another_data = [];
+
+
+(async function () {
+  return
+  let rep = await fetch(url);
+  let json_thing = await rep.json();
+  let count = 0;
+  other_data = json_thing;
+  for (var i=0; i < divisions; i++) {
+    $('#api-content3').append(`<div class='api-segment'></div>`)
+  }
+  json_thing.data.forEach((index) => {
+    $("#api-content3").append(`<div class="gif-card" id="h${index.images.original.height}w${index.images.original.width}c${count}" style="background-image: url(${index.images.original.url}); "></div>`);
+    another_data.push([`${index.images.original.height}w${index.images.original.width}c${count}`,`${index.images.original.url}`,]);
+
+    count += 1;
+  });
+  
+  
+})
+    
+
+
+
+// I'll clean the code later..
+
+  
+  
+let the_data;
+let important_data = [];
+let card_logic = 0; 
+  
+function ContentLoader() {
+  $("#api-content")
+    .children()
+    .each((index, item) => {
+      // VARIABLES
+      let composition = $(item).attr("id").split(RegExp("[a-zA-Z]"));
+      let h_w_results;
+
+      // This block of code checks which dimension of the photo is greater
+      if (composition[1] > composition[2]) {
+        h_w_results = composition[1];
+      } else {
+        h_w_results = composition[2];
+      }
+      let h_ratio = (composition[1] / h_w_results) * 100;
+      let w_ratio = (composition[2] / h_w_results) * 100;
+
+      // Sets "click" event listeners to each card to enable animation
+      $(item).on("click", function CardClicked() {
+        console.log($(item).parent().children().length);
+        let card = this;
+        if ($("#spawn").children().length > 0) {
+          return 1;
+        }
+
+        // Appends a div to the wrapper element prevent further actions on other cards
+        $("body").append(
+          `<div class="grrrrr" style="transition: all .6s; z-index:30; height: 100vh; width: 100vw; background: rgba(0, 0, 0, 0); position: absolute; top: ${window.scrollY}px; left: calc(0%)"></div>`
+        );
+
+        console.log($(item), $(item).offset(), $(item).position());
+        // Summons a container for the duplicate card
+        $("#spawn").append('<div id="summoned-div-wrapper" ></div>');
+        $("#summoned-div-wrapper")
+          .css("top", `${$(item).position().top}px`)
+          .css("left", `${$(item).offset().left}px`)
+          .css("border", "2px solid white")
+          .css("height", `${$(item).outerHeight()}`)
+          .css("width", `${$(item).outerWidth()}`)
+          .css("z-index", "50")
+          .css("contain", "content")
+          .css("transition", `all ${animation_time}s`);
+
+        // Dupliates and blackens the original card
+        $(item)
+          .css("background-blend-mode", "color")
+          .clone()
+          .css("background-blend-mode", "unset")
+          .css("width", `${$(item).outerWidth()}`)
+          .css("height", `100%`)
+          .css("position", "absolute")
+          .css("z-index", "50")
+          .css("max-height", "100%")
+          .css("border", "0px solid red")
+          .css("transition", `all ${animation_time}s`)
+          .appendTo($("#summoned-div-wrapper"))
+
+          // Initiates the animation process
+          .on("mouseover", function CardHovered() {
+            let new_card = this;
+            $(this).off();
+            $(".grrrrr")
+              .css("background", "rgba(0, 0, 0, 0.3)")
+
+              // Everything resets to when it was before being animated
+              .on("click", function DivHovered() {
+                $(this).off("click", DivHovered);
+                $(this).css("background", "rgba(0,0,0,0)");
+
+                $("#summoned-div-wrapper")
+                  .css("transform", `translate(0px, 0px)`)
+                  .css("width", `${$(item).outerWidth()}px`)
+                  .css("height", `${$(item).outerHeight()}px`);
+
+                $(new_card)
+                  .css("width", `${$(item).outerWidth()}px`)
+                  .css("background-size", `100% 100%`);
+                setTimeout(() => {
+                  $("#spawn").empty();
+                  $(".grrrrr").remove();
+                  $(item).css("background-blend-mode", "unset");
+                }, animation_time * 1000);
+              });
+
+            let summoned_pos_x =
+              -card_offset +
+              2 -
+              $(item).offset().left +
+              $("#api-content").offset().left +
+              ($("#api-content").width() - $(item).outerWidth()) / 2;
+            let summoned_pos_y =
+              2 -
+              $(item).offset().top +
+              $("#api-content").offset().top +
+              ($("#api-content").height() - $(item).outerHeight()) / 2;
+            $("#summoned-div-wrapper")
+              .css(
+                "transform",
+                `translate(${summoned_pos_x}px, ${summoned_pos_y}px)`
+              )
+              .css(
+                "width",
+                `${$("#summoned-div-wrapper").width() + card_offset * 2}px`
+              )
+              .css("height", "160px")
+              .append(
+                `<div id="download-div" style="width: ${
+                  $("#summoned-div-wrapper").width() + card_offset * 2 - 160
+                }px;"><div style="width: 100%;"><h5>${
+                  the_data.data[composition[3]].title
+                }</h5><h6>${
+                  (the_data.data[composition[3]].user &&
+                    the_data.data[composition[3]].user.display_name) ||
+                  the_data.data[composition[3]].username
+                }</h6></div><a href="${
+                  $(item).css("background-image").split(RegExp(/"/))[1]
+                }" target="_blank"><div class="download-btn"><i class="fi-xwluxl-download-wide"><svg class="fi-padding" role="img" xmlns="http://www.w3.org/2000/svg" width="1000mm" height="1000mm" viewBox="0 0 1000 1000" style="width:1.33em; height:1.33em;vertical-align: middle;"><path id="path" fill="currentColor" d=" M 225 713C 225 713 775 713 775 713C 789 712 801 719 808 731C 815 743 815 757 808 769C 801 781 789 788 775 788C 775 788 225 788 225 788C 211 788 199 781 192 769C 185 757 185 743 192 731C 199 719 211 712 225 713C 225 713 225 713 225 713M 499 137C 510 137 519 141 527 148C 534 155 538 165 538 175C 538 175 538 534 538 534C 538 534 698 373 698 373C 708 364 722 360 735 363C 748 367 758 377 762 390C 765 403 761 417 752 427C 752 427 530 648 530 648C 523 657 512 663 500 663C 488 663 477 658 470 648C 470 648 248 427 248 427C 238 416 234 400 240 386C 246 371 259 362 275 362C 285 362 294 366 302 373C 302 373 462 534 462 534C 462 534 462 175 462 175C 462 154 479 137 499 137C 499 137 499 137 499 137" transform=""></path></svg></i> DOWNLOAD</div></a></div>`
+              );
+
+            $(this)
+              .css("width", "160px")
+              .css("background-size", `${w_ratio}% ${h_ratio}%`);
+          });
+      });
+    });
+}
+// This block of code is whenever the user inputs text in the searchbar
+async function ReloadImages(text) {
+  let url_search = `https://api.giphy.com/v1/gifs/search?api_key=i81xvgs2ZjGZNV5u3LyVjxm85Ufww4Bh&q=${text}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`;
+  console.log(text);
+  $("#api-content").empty();
+
+  let rep = await fetch(url_search);
+  console.log("HELP");
+  let json_thing = await rep.json();
+  let count = 0;
+  the_data = json_thing;
+  json_thing.data.forEach((index) => {
+    $("#api-content").append(
+      `<div class="gif-card" id="h${index.images.original.height}w${index.images.original.width}c${count}" style="background-image: url(${index.images.original.url}); "></div>`
+    );
+    important_data.push([
+      `${index.images.original.height}w${index.images.original.width}c${count}`,
+      `${index.images.original.url}`,
+    ]);
+
+    count += 1;
+  });
+
+  ContentLoader();
+}
+
+//Retrives Necessary Cookies
+window.addEventListener("load", function () {
+  console.log(localStorage);
+  Object.keys(localStorage).forEach((item) => {
+    if (item.includes("TO_GIFS")) {
+      let value = localStorage.getItem(item);
+      $(".gif-search-bar").val(value);
+      ReloadImages(value);
+      localStorage.removeItem(item);
+      $('.gif-background').css('height', '15vh')
+
+    }
+  });
+});
+
+// This code contain events that make the UI interactive
+window.addEventListener("load", function () {
+  $(".gif-search-bar").on("keyup", function (e) {
+    if (e.key === "Enter" || e.keyCode === 13) {
+      $('.gif-background').css('height', '15vh')
+      // $('.gif-search-div').css('top', '15vh')
+      ReloadImages(this.value);
+    }
+  });
+
+  $(".gif-search-img").click(function () {
+    $('.gif-background').css('height', '15vh')
+    ReloadImages($(".gif-search-bar").val());
+  });
+});
+
+// This is for the API carousel whenever the user click the left or right image
+function ImageDivReadjustment(direction, repeat, locked) {
+  repeat = Math.abs(repeat) - 1;
+
+  let cards2 = Object.values($($("#api-content2")[0].children));
+  cards2 = cards2.splice(0, cards2.length - 1);
+
+  if (direction == "right") {
+    card_logic =
+      (card_logic + important_data.length - 1 - repeat) % important_data.length;
+    $(cards2.toSpliced(0, cards2.length - repeat - 1))
+      .remove()
+      .each((index, item) => {
+        let lmao =
+          (card_logic +
+            repeat -
+            index +
+            (important_data.length - Math.floor(cards2.length / 2))) %
+          important_data.length;
+        $(item)
+          .clone()
+          .css("background-image", `url(${important_data[lmao][1]})`)
+          .css("width", "0%")
+          .prependTo($("#api-content2"))
+          .on("click", function ilyddy() {
+            let sdsa = Math.round(
+              0.166667 * $(this).attr("id") ** 3 -
+                2 * $(this).attr("id") ** 2 +
+                6.47619 * $(this).attr("id") -
+                4.57143
+            );
+            console.log(sdsa);
+            if (sdsa > 0) {
+              ImageDivReadjustment("right", sdsa);
+            } else if (sdsa < 0) {
+              ImageDivReadjustment("left", sdsa);
+            }
+          });
+      });
+    setTimeout(() => {
+      $("#api-content2")
+        .children()
+        .each((index, item) => {
+          index = $("#api-content2").children().length - index;
+          $(item).css(
+            "width",
+            `${10 * (-0.4 * (index - 1.5) * (index - 6.5))}%`
+          );
+          console.log(item, index);
+        });
+    }, 1);
+  }
+  if (direction == "left") {
+    card_logic = (card_logic + repeat + 1) % important_data.length;
+
+    $(cards2.toSpliced(repeat + 1, cards2.length))
+      .remove()
+      .each((index, item) => {
+        index = cards2.toSpliced(repeat + 1, cards2.length).length - index;
+        let lmao =
+          (card_logic + repeat - index + Math.floor(cards2.length / 2)) %
+          important_data.length;
+        console.log(lmao);
+        $(item)
+          .clone()
+          .css("background-image", `url(${important_data[lmao][1]})`)
+          .css("width", "0%")
+          .appendTo($("#api-content2"))
+          .on("click", function ilyddy() {
+            let sdsa = Math.round(
+              0.166667 * $(this).attr("id") ** 3 -
+                2 * $(this).attr("id") ** 2 +
+                6.47619 * $(this).attr("id") -
+                4.57143
+            );
+            console.log(sdsa);
+            if (sdsa > 0) {
+              ImageDivReadjustment("right", sdsa);
+            } else if (sdsa < 0) {
+              ImageDivReadjustment("left", sdsa);
+            }
+          });
+      });
+    setTimeout(() => {
+      $("#api-content2")
+        .children()
+        .each((index, item) => {
+          index += 1;
+          $(item).css(
+            "width",
+            `${10 * (-0.4 * (index - 1.5) * (index - 6.5))}%`
+          );
+          console.log(item, index);
+        });
+    }, 1);
+  }
+  console.log(cards2);
+  $("#api-content2")
+    .children()
+    .each(function (index, item) {
+      $(item).attr("id", index + 1);
+      console.log(item);
+    });
+  console.log(card_logic, Math.abs(repeat));
+}
+
+// MAIN FUNCTION
+(async function () {
+  let rep = await fetch(url);
+  console.log("HELP");
+  let json_thing = await rep.json();
+  let count = 0;
+  the_data = json_thing;
+  json_thing.data.forEach((index) => {
+    $("#api-content").append(
+      `<div class="gif-card" id="h${index.images.original.height}w${index.images.original.width}c${count}" style="background-image: url(${index.images.original.url}); "></div>`
+    );
+    important_data.push([
+      `${index.images.original.height}w${index.images.original.width}c${count}`,
+      `${index.images.original.url}`,
+    ]);
+
+    count += 1;
+  });
+  $("#api-content2")
+    .children()
+    .each((index, item) => {
+      $(item)
+        .css("background-image", `url(${important_data[(index + important_data.length-3) % important_data.length][1]})`)
+        .css("width", `${10 * (-0.4 * (index + 1 - 1.5) * (index + 1 - 6.5))}%`)
+        .on("click", function CardClicked() {
+          let sdsa = Math.round(
+            0.166667 * $(item).attr("id") ** 3 -
+              2 * $(item).attr("id") ** 2 +
+              6.47619 * $(item).attr("id") -
+              4.57143
+          );
+          console.log(sdsa);
+          if (sdsa > 0) {
+            ImageDivReadjustment("right", sdsa);
+          } else if (sdsa < 0) {
+            ImageDivReadjustment("left", sdsa);
+          }
+        });
+    });
+
+  // return
+
+  console.log(json_thing.data[1]);
+
+  ContentLoader();
+})();
+
+
+
+// Shall this code never see light
+(function(){
+  return
+  let the_data;
+let important_data = [];
+let card_logic = 0; 
+  
+function ContentLoader() {
+  $("#api-content")
+    .children()
+    .each((index, item) => {
+      // VARIABLES
+      let composition = $(item).attr("id").split(RegExp("[a-zA-Z]"));
+      let h_w_results;
+
+      // This block of code checks which dimension of the photo is greater
+      if (composition[1] > composition[2]) {
+        h_w_results = composition[1];
+      } else {
+        h_w_results = composition[2];
+      }
+      let h_ratio = (composition[1] / h_w_results) * 100;
+      let w_ratio = (composition[2] / h_w_results) * 100;
+
+      // Sets "click" event listeners to each card to enable animation
+      $(item).on("click", function CardClicked() {
+        console.log($(item).parent().children().length);
+        let card = this;
+        if ($("#spawn").children().length > 0) {
+          return 1;
+        }
+
+        // Appends a div to the wrapper element prevent further actions on other cards
+        $("body").append(
+          `<div class="grrrrr" style="transition: all .6s; z-index:30; height: 100vh; width: 100vw; background: rgba(0, 0, 0, 0); position: absolute; top: ${window.scrollY}px; left: calc(0%)"></div>`
+        );
+
+        console.log($(item), $(item).offset(), $(item).position());
+        // Summons a container for the duplicate card
+        $("#spawn").append('<div id="summoned-div-wrapper" ></div>');
+        $("#summoned-div-wrapper")
+          .css("top", `${$(item).position().top}px`)
+          .css("left", `${$(item).offset().left}px`)
+          .css("border", "2px solid white")
+          .css("height", `${$(item).outerHeight()}`)
+          .css("width", `${$(item).outerWidth()}`)
+          .css("z-index", "50")
+          .css("contain", "content")
+          .css("transition", `all ${animation_time}s`);
+
+        // Dupliates and blackens the original card
+        $(item)
+          .css("background-blend-mode", "color")
+          .clone()
+          .css("background-blend-mode", "unset")
+          .css("width", `${$(item).outerWidth()}`)
+          .css("height", `100%`)
+          .css("position", "absolute")
+          .css("z-index", "50")
+          .css("max-height", "100%")
+          .css("border", "0px solid red")
+          .css("transition", `all ${animation_time}s`)
+          .appendTo($("#summoned-div-wrapper"))
+
+          // Initiates the animation process
+          .on("mouseover", function CardHovered() {
+            let new_card = this;
+            $(this).off();
+            $(".grrrrr")
+              .css("background", "rgba(0, 0, 0, 0.3)")
+
+              // Everything resets to when it was before being animated
+              .on("click", function DivHovered() {
+                $(this).off("click", DivHovered);
+                $(this).css("background", "rgba(0,0,0,0)");
+
+                $("#summoned-div-wrapper")
+                  .css("transform", `translate(0px, 0px)`)
+                  .css("width", `${$(item).outerWidth()}px`)
+                  .css("height", `${$(item).outerHeight()}px`);
+
+                $(new_card)
+                  .css("width", `${$(item).outerWidth()}px`)
+                  .css("background-size", `100% 100%`);
+                setTimeout(() => {
+                  $("#spawn").empty();
+                  $(".grrrrr").remove();
+                  $(item).css("background-blend-mode", "unset");
+                }, animation_time * 1000);
+              });
+
+            let summoned_pos_x =
+              -card_offset +
+              2 -
+              $(item).offset().left +
+              $("#api-content").offset().left +
+              ($("#api-content").width() - $(item).outerWidth()) / 2;
+            let summoned_pos_y =
+              2 -
+              $(item).offset().top +
+              $("#api-content").offset().top +
+              ($("#api-content").height() - $(item).outerHeight()) / 2;
+            $("#summoned-div-wrapper")
+              .css(
+                "transform",
+                `translate(${summoned_pos_x}px, ${summoned_pos_y}px)`
+              )
+              .css(
+                "width",
+                `${$("#summoned-div-wrapper").width() + card_offset * 2}px`
+              )
+              .css("height", "160px")
+              .append(
+                `<div id="download-div" style="width: ${
+                  $("#summoned-div-wrapper").width() + card_offset * 2 - 160
+                }px;"><div style="width: 100%;"><h5>${
+                  the_data.data[composition[3]].title
+                }</h5><h6>${
+                  (the_data.data[composition[3]].user &&
+                    the_data.data[composition[3]].user.display_name) ||
+                  the_data.data[composition[3]].username
+                }</h6></div><a href="${
+                  $(item).css("background-image").split(RegExp(/"/))[1]
+                }" target="_blank"><div class="download-btn"><i class="fi-xwluxl-download-wide"><svg class="fi-padding" role="img" xmlns="http://www.w3.org/2000/svg" width="1000mm" height="1000mm" viewBox="0 0 1000 1000" style="width:1.33em; height:1.33em;vertical-align: middle;"><path id="path" fill="currentColor" d=" M 225 713C 225 713 775 713 775 713C 789 712 801 719 808 731C 815 743 815 757 808 769C 801 781 789 788 775 788C 775 788 225 788 225 788C 211 788 199 781 192 769C 185 757 185 743 192 731C 199 719 211 712 225 713C 225 713 225 713 225 713M 499 137C 510 137 519 141 527 148C 534 155 538 165 538 175C 538 175 538 534 538 534C 538 534 698 373 698 373C 708 364 722 360 735 363C 748 367 758 377 762 390C 765 403 761 417 752 427C 752 427 530 648 530 648C 523 657 512 663 500 663C 488 663 477 658 470 648C 470 648 248 427 248 427C 238 416 234 400 240 386C 246 371 259 362 275 362C 285 362 294 366 302 373C 302 373 462 534 462 534C 462 534 462 175 462 175C 462 154 479 137 499 137C 499 137 499 137 499 137" transform=""></path></svg></i> DOWNLOAD</div></a></div>`
+              );
+
+            $(this)
+              .css("width", "160px")
+              .css("background-size", `${w_ratio}% ${h_ratio}%`);
+          });
+      });
+    });
+}
+
+
+
+
+// This is for the API carousel whenever the user click the left or right image
+function ImageDivReadjustment(direction, repeat, locked) {
+  repeat = Math.abs(repeat) - 1;
+
+  let cards2 = Object.values($($("#api-content2")[0].children));
+  cards2 = cards2.splice(0, cards2.length - 1);
+
+  if (direction == "right") {
+    card_logic =
+      (card_logic + important_data.length - 1 - repeat) % important_data.length;
+    $(cards2.toSpliced(0, cards2.length - repeat - 1))
+      .remove()
+      .each((index, item) => {
+        let lmao =
+          (card_logic +
+            repeat -
+            index +
+            (important_data.length - Math.floor(cards2.length / 2))) %
+          important_data.length;
+        $(item)
+          .clone()
+          .css("background-image", `url(${important_data[lmao][1]})`)
+          .css("width", "0%")
+          .prependTo($("#api-content2"))
+          .on("click", function ilyddy() {
+            let sdsa = Math.round(
+              0.166667 * $(this).attr("id") ** 3 -
+                2 * $(this).attr("id") ** 2 +
+                6.47619 * $(this).attr("id") -
+                4.57143
+            );
+            console.log(sdsa);
+            if (sdsa > 0) {
+              ImageDivReadjustment("right", sdsa);
+            } else if (sdsa < 0) {
+              ImageDivReadjustment("left", sdsa);
+            }
+          });
+      });
+    setTimeout(() => {
+      $("#api-content2")
+        .children()
+        .each((index, item) => {
+          index = $("#api-content2").children().length - index;
+          $(item).css(
+            "width",
+            `${10 * (-0.4 * (index - 1.5) * (index - 6.5))}%`
+          );
+          console.log(item, index);
+        });
+    }, 1);
+  }
+  if (direction == "left") {
+    card_logic = (card_logic + repeat + 1) % important_data.length;
+
+    $(cards2.toSpliced(repeat + 1, cards2.length))
+      .remove()
+      .each((index, item) => {
+        index = cards2.toSpliced(repeat + 1, cards2.length).length - index;
+        let lmao =
+          (card_logic + repeat - index + Math.floor(cards2.length / 2)) %
+          important_data.length;
+        console.log(lmao);
+        $(item)
+          .clone()
+          .css("background-image", `url(${important_data[lmao][1]})`)
+          .css("width", "0%")
+          .appendTo($("#api-content2"))
+          .on("click", function ilyddy() {
+            let sdsa = Math.round(
+              0.166667 * $(this).attr("id") ** 3 -
+                2 * $(this).attr("id") ** 2 +
+                6.47619 * $(this).attr("id") -
+                4.57143
+            );
+            console.log(sdsa);
+            if (sdsa > 0) {
+              ImageDivReadjustment("right", sdsa);
+            } else if (sdsa < 0) {
+              ImageDivReadjustment("left", sdsa);
+            }
+          });
+      });
+    setTimeout(() => {
+      $("#api-content2")
+        .children()
+        .each((index, item) => {
+          index += 1;
+          $(item).css(
+            "width",
+            `${10 * (-0.4 * (index - 1.5) * (index - 6.5))}%`
+          );
+          console.log(item, index);
+        });
+    }, 1);
+  }
+  console.log(cards2);
+  $("#api-content2")
+    .children()
+    .each(function (index, item) {
+      $(item).attr("id", index + 1);
+      console.log(item);
+    });
+  console.log(card_logic, Math.abs(repeat));
+}
+
+// MAIN FUNCTION
+(async function () {
+  let rep = await fetch(url);
+  console.log("HELP");
+  let json_thing = await rep.json();
+  let count = 0;
+  the_data = json_thing;
+  json_thing.data.forEach((index) => {
+    $("#api-content").append(`<div class="gif-card" id="h${index.images.original.height}w${index.images.original.width}c${count}" style="background-image: url(${index.images.original.url}); "></div>`);
+    important_data.push([`${index.images.original.height}w${index.images.original.width}c${count}`,`${index.images.original.url}`,]);
+
+    count += 1;
+  });
+  $("#api-content2")
+    .children()
+    .each((index, item) => {
+      $(item)
+        .css("background-image", `url(${important_data[(index + important_data.length-3) % important_data.length][1]})`)
+        .css("width", `${10 * (-0.4 * (index + 1 - 1.5) * (index + 1 - 6.5))}%`)
+        .on("click", function CardClicked() {
+          let sdsa = Math.round(0.166667 * $(item).attr("id") ** 3 -2 * $(item).attr("id") ** 2 +6.47619 * $(item).attr("id") -4.57143);
+          console.log(sdsa);
+          if (sdsa > 0) {
+            ImageDivReadjustment("right", sdsa);
+          } else if (sdsa < 0) {
+            ImageDivReadjustment("left", sdsa);
+          }
+        });
+    });
+
+  // return
+
+  console.log(json_thing.data[1]);
+
+  ContentLoader();
+})();
+
+})()

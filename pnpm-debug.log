@@ -1,0 +1,583 @@
+---
+  0 debug pnpm:scope: 
+    selected: 1
+    workspacePrefix: null
+  1 info pnpm: 
+    message: "A store server is running. All store manipulations are delegated to it."
+    prefix: "/app"
+  2 debug pnpm:package-json: 
+    initial: 
+      name: "three-demo"
+      version: "0.0.0"
+      scripts: 
+        dev: "vite"
+        build: "vite build"
+        serve: "vite preview"
+      devDependencies: 
+        vite: "^2.3.0"
+      dependencies: 
+        three: "^0.128.0"
+      gitHead: "34f5dfe0a35cffd625a885d55598b96eff1c9d3c"
+      readme: "ERROR: No README data found!"
+      _id: "three-demo@0.0.0"
+    prefix: "/app"
+  3 info pnpm: 
+    message: "Performing headless installation"
+    prefix: "/app"
+  4 debug pnpm:stats: 
+    prefix: "/app"
+    removed: 0
+  5 debug pnpm:stage: 
+    prefix: "/app"
+    stage: "importing_started"
+  6 warn pnpm:install-check: 
+    message: "Unsupported engine for /vite/2.9.18: wanted: {\"node\":\">=12.2.0\"} (current: {\"node\":\"v10.24.1\",\"pnpm\":\"2.25.5\"})"
+    prefix: "/app"
+  7 warn pnpm:install-check: 
+    message: "Unsupported engine for /esbuild/0.14.54: wanted: {\"node\":\">=12\"} (current: {\"node\":\"v10.24.1\",\"pnpm\":\"2.25.5\"})"
+    prefix: "/app"
+  8 warn pnpm:install-check: 
+    message: "Unsupported platform for /@esbuild/linux-loong64/0.14.54: wanted {\"cpu\":[\"loong64\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  9 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /@esbuild/linux-loong64/0.14.54: wanted {\"cpu\":[\"loong64\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/@esbuild/linux-loong64/0.14.54"
+      name: "@esbuild/linux-loong64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  10 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-android-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"android\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  11 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-android-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"android\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-android-64/0.14.54"
+      name: "esbuild-android-64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  12 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-android-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"android\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  13 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-android-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"android\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-android-arm64/0.14.54"
+      name: "esbuild-android-arm64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  14 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-darwin-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"darwin\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  15 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-darwin-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"darwin\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-darwin-64/0.14.54"
+      name: "esbuild-darwin-64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  16 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-darwin-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"darwin\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  17 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-darwin-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"darwin\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-darwin-arm64/0.14.54"
+      name: "esbuild-darwin-arm64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  18 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-freebsd-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"freebsd\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  19 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-freebsd-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"freebsd\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-freebsd-64/0.14.54"
+      name: "esbuild-freebsd-64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  20 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-freebsd-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"freebsd\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  21 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-freebsd-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"freebsd\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-freebsd-arm64/0.14.54"
+      name: "esbuild-freebsd-arm64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  22 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-linux-32/0.14.54: wanted {\"cpu\":[\"ia32\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  23 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-linux-32/0.14.54: wanted {\"cpu\":[\"ia32\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-linux-32/0.14.54"
+      name: "esbuild-linux-32"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  24 warn pnpm:install-check: 
+    message: "Unsupported engine for /esbuild-linux-64/0.14.54: wanted: {\"node\":\">=12\"} (current: {\"node\":\"v10.24.1\",\"pnpm\":\"2.25.5\"})"
+    prefix: "/app"
+  25 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported engine for /esbuild-linux-64/0.14.54: wanted: {\"node\":\">=12\"} (current: {\"node\":\"v10.24.1\",\"pnpm\":\"2.25.5\"})"
+    package: 
+      id: "/esbuild-linux-64/0.14.54"
+      name: "esbuild-linux-64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_engine"
+  26 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-linux-arm/0.14.54: wanted {\"cpu\":[\"arm\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  27 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-linux-arm/0.14.54: wanted {\"cpu\":[\"arm\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-linux-arm/0.14.54"
+      name: "esbuild-linux-arm"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  28 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-linux-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  29 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-linux-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-linux-arm64/0.14.54"
+      name: "esbuild-linux-arm64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  30 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-linux-mips64le/0.14.54: wanted {\"cpu\":[\"mips64el\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  31 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-linux-mips64le/0.14.54: wanted {\"cpu\":[\"mips64el\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-linux-mips64le/0.14.54"
+      name: "esbuild-linux-mips64le"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  32 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-linux-ppc64le/0.14.54: wanted {\"cpu\":[\"ppc64\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  33 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-linux-ppc64le/0.14.54: wanted {\"cpu\":[\"ppc64\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-linux-ppc64le/0.14.54"
+      name: "esbuild-linux-ppc64le"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  34 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-linux-riscv64/0.14.54: wanted {\"cpu\":[\"riscv64\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  35 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-linux-riscv64/0.14.54: wanted {\"cpu\":[\"riscv64\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-linux-riscv64/0.14.54"
+      name: "esbuild-linux-riscv64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  36 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-linux-s390x/0.14.54: wanted {\"cpu\":[\"s390x\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  37 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-linux-s390x/0.14.54: wanted {\"cpu\":[\"s390x\"],\"os\":[\"linux\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-linux-s390x/0.14.54"
+      name: "esbuild-linux-s390x"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  38 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-netbsd-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"netbsd\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  39 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-netbsd-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"netbsd\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-netbsd-64/0.14.54"
+      name: "esbuild-netbsd-64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  40 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-openbsd-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"openbsd\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  41 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-openbsd-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"openbsd\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-openbsd-64/0.14.54"
+      name: "esbuild-openbsd-64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  42 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-sunos-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"sunos\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  43 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-sunos-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"sunos\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-sunos-64/0.14.54"
+      name: "esbuild-sunos-64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  44 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-windows-32/0.14.54: wanted {\"cpu\":[\"ia32\"],\"os\":[\"win32\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  45 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-windows-32/0.14.54: wanted {\"cpu\":[\"ia32\"],\"os\":[\"win32\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-windows-32/0.14.54"
+      name: "esbuild-windows-32"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  46 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-windows-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"win32\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  47 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-windows-64/0.14.54: wanted {\"cpu\":[\"x64\"],\"os\":[\"win32\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-windows-64/0.14.54"
+      name: "esbuild-windows-64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  48 warn pnpm:install-check: 
+    message: "Unsupported platform for /esbuild-windows-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"win32\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  49 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /esbuild-windows-arm64/0.14.54: wanted {\"cpu\":[\"arm64\"],\"os\":[\"win32\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/esbuild-windows-arm64/0.14.54"
+      name: "esbuild-windows-arm64"
+      version: "0.14.54"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  50 warn pnpm:install-check: 
+    message: "Unsupported platform for /fsevents/2.3.3: wanted {\"cpu\":[\"any\"],\"os\":[\"darwin\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  51 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /fsevents/2.3.3: wanted {\"cpu\":[\"any\"],\"os\":[\"darwin\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/fsevents/2.3.3"
+      name: "fsevents"
+      version: "2.3.3"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  52 warn pnpm:install-check: 
+    message: "Unsupported platform for /fsevents/2.3.3: wanted {\"cpu\":[\"any\"],\"os\":[\"darwin\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    prefix: "/app"
+  53 debug pnpm:skipped-optional-dependency: 
+    details: "Error: Unsupported platform for /fsevents/2.3.3: wanted {\"cpu\":[\"any\"],\"os\":[\"darwin\"]} (current: {\"os\":\"linux\",\"cpu\":\"x64\"})"
+    package: 
+      id: "/fsevents/2.3.3"
+      name: "fsevents"
+      version: "2.3.3"
+    prefix: "/app"
+    reason: "unsupported_platform"
+  54 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/three/0.128.0"
+    requester: "/app"
+    status: "resolved"
+  55 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/vite/2.9.18"
+    requester: "/app"
+    status: "resolved"
+  56 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/esbuild/0.14.54"
+    requester: "/app"
+    status: "resolved"
+  57 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/postcss/8.5.3"
+    requester: "/app"
+    status: "resolved"
+  58 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/nanoid/3.3.11"
+    requester: "/app"
+    status: "resolved"
+  59 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/picocolors/1.1.1"
+    requester: "/app"
+    status: "resolved"
+  60 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/esbuild/0.14.54"
+    requester: "/app"
+    status: "fetched"
+  61 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/picocolors/1.1.1"
+    requester: "/app"
+    status: "fetched"
+  62 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/source-map-js/1.2.1"
+    requester: "/app"
+    status: "resolved"
+  63 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/resolve/1.22.10"
+    requester: "/app"
+    status: "resolved"
+  64 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/nanoid/3.3.11"
+    requester: "/app"
+    status: "fetched"
+  65 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/is-core-module/2.16.1"
+    requester: "/app"
+    status: "resolved"
+  66 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/hasown/2.0.2"
+    requester: "/app"
+    status: "resolved"
+  67 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/is-core-module/2.16.1"
+    requester: "/app"
+    status: "fetched"
+  68 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/postcss/8.5.3"
+    requester: "/app"
+    status: "fetched"
+  69 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/source-map-js/1.2.1"
+    requester: "/app"
+    status: "fetched"
+  70 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/hasown/2.0.2"
+    requester: "/app"
+    status: "found_in_store"
+  71 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/function-bind/1.1.2"
+    requester: "/app"
+    status: "resolved"
+  72 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/path-parse/1.0.7"
+    requester: "/app"
+    status: "resolved"
+  73 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/vite/2.9.18"
+    requester: "/app"
+    status: "fetched"
+  74 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/function-bind/1.1.2"
+    requester: "/app"
+    status: "found_in_store"
+  75 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/path-parse/1.0.7"
+    requester: "/app"
+    status: "found_in_store"
+  76 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/supports-preserve-symlinks-flag/1.0.0"
+    requester: "/app"
+    status: "resolved"
+  77 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/supports-preserve-symlinks-flag/1.0.0"
+    requester: "/app"
+    status: "found_in_store"
+  78 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/rollup/2.77.3"
+    requester: "/app"
+    status: "resolved"
+  79 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/resolve/1.22.10"
+    requester: "/app"
+    status: "fetched"
+  80 debug pnpm:stats: 
+    added: 14
+    prefix: "/app"
+  81 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/vite/2.9.18/node_modules/esbuild"
+  82 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/postcss/8.5.3/node_modules/postcss"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/vite/2.9.18/node_modules/postcss"
+  83 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/resolve/1.22.10/node_modules/resolve"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/vite/2.9.18/node_modules/resolve"
+  84 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/rollup/2.77.3/node_modules/rollup"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/vite/2.9.18/node_modules/rollup"
+  85 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/nanoid/3.3.11/node_modules/nanoid"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/postcss/8.5.3/node_modules/nanoid"
+  86 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/picocolors/1.1.1/node_modules/picocolors"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/postcss/8.5.3/node_modules/picocolors"
+  87 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/source-map-js/1.2.1/node_modules/source-map-js"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/postcss/8.5.3/node_modules/source-map-js"
+  88 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/is-core-module/2.16.1/node_modules/is-core-module"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/resolve/1.22.10/node_modules/is-core-module"
+  89 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/path-parse/1.0.7/node_modules/path-parse"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/resolve/1.22.10/node_modules/path-parse"
+  90 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/supports-preserve-symlinks-flag/1.0.0/node_modules/supports-preserve-symlinks-flag"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/resolve/1.22.10/node_modules/supports-preserve-symlinks-flag"
+  91 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/hasown/2.0.2/node_modules/hasown"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/is-core-module/2.16.1/node_modules/hasown"
+  92 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/function-bind/1.1.2/node_modules/function-bind"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/hasown/2.0.2/node_modules/function-bind"
+  93 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/rollup/2.77.3"
+    requester: "/app"
+    status: "fetched"
+  94 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/three/0.128.0"
+    requester: "/app"
+    status: "fetched"
+  95 debug pnpm:stage: 
+    prefix: "/app"
+    stage: "importing_done"
+  96 debug pnpm: "No entry for \"/fsevents/2.3.3\" in shrinkwrap.yaml"
+  97 debug pnpm: "No entry for \"/@esbuild/linux-loong64/0.14.54\" in shrinkwrap.yaml"
+  98 debug pnpm: "No entry for \"/esbuild-android-64/0.14.54\" in shrinkwrap.yaml"
+  99 debug pnpm: "No entry for \"/esbuild-android-arm64/0.14.54\" in shrinkwrap.yaml"
+  100 debug pnpm: "No entry for \"/esbuild-darwin-64/0.14.54\" in shrinkwrap.yaml"
+  101 debug pnpm: "No entry for \"/esbuild-darwin-arm64/0.14.54\" in shrinkwrap.yaml"
+  102 debug pnpm: "No entry for \"/esbuild-freebsd-64/0.14.54\" in shrinkwrap.yaml"
+  103 debug pnpm: "No entry for \"/esbuild-freebsd-arm64/0.14.54\" in shrinkwrap.yaml"
+  104 debug pnpm: "No entry for \"/esbuild-linux-32/0.14.54\" in shrinkwrap.yaml"
+  105 debug pnpm: "No entry for \"/esbuild-linux-64/0.14.54\" in shrinkwrap.yaml"
+  106 debug pnpm: "No entry for \"/esbuild-linux-arm/0.14.54\" in shrinkwrap.yaml"
+  107 debug pnpm: "No entry for \"/esbuild-linux-arm64/0.14.54\" in shrinkwrap.yaml"
+  108 debug pnpm: "No entry for \"/esbuild-linux-mips64le/0.14.54\" in shrinkwrap.yaml"
+  109 debug pnpm: "No entry for \"/esbuild-linux-ppc64le/0.14.54\" in shrinkwrap.yaml"
+  110 debug pnpm: "No entry for \"/esbuild-linux-riscv64/0.14.54\" in shrinkwrap.yaml"
+  111 debug pnpm: "No entry for \"/esbuild-linux-s390x/0.14.54\" in shrinkwrap.yaml"
+  112 debug pnpm: "No entry for \"/esbuild-netbsd-64/0.14.54\" in shrinkwrap.yaml"
+  113 debug pnpm: "No entry for \"/esbuild-openbsd-64/0.14.54\" in shrinkwrap.yaml"
+  114 debug pnpm: "No entry for \"/esbuild-sunos-64/0.14.54\" in shrinkwrap.yaml"
+  115 debug pnpm: "No entry for \"/esbuild-windows-32/0.14.54\" in shrinkwrap.yaml"
+  116 debug pnpm: "No entry for \"/esbuild-windows-64/0.14.54\" in shrinkwrap.yaml"
+  117 debug pnpm: "No entry for \"/esbuild-windows-arm64/0.14.54\" in shrinkwrap.yaml"
+  118 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/esbuild"
+  119 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/postcss/8.5.3/node_modules/postcss"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/postcss"
+  120 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/resolve/1.22.10/node_modules/resolve"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/resolve"
+  121 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/rollup/2.77.3/node_modules/rollup"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/rollup"
+  122 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/is-core-module/2.16.1/node_modules/is-core-module"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/is-core-module"
+  123 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/nanoid/3.3.11/node_modules/nanoid"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/nanoid"
+  124 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/path-parse/1.0.7/node_modules/path-parse"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/path-parse"
+  125 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/picocolors/1.1.1/node_modules/picocolors"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/picocolors"
+  126 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/source-map-js/1.2.1/node_modules/source-map-js"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/source-map-js"
+  127 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/supports-preserve-symlinks-flag/1.0.0/node_modules/supports-preserve-symlinks-flag"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/supports-preserve-symlinks-flag"
+  128 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/hasown/2.0.2/node_modules/hasown"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/hasown"
+  129 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/function-bind/1.1.2/node_modules/function-bind"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/function-bind"
+  130 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/vite/2.9.18/node_modules/vite"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/vite"
+  131 debug pnpm:link: 
+    target: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/three/0.128.0/node_modules/three"
+    link: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/three"
+  132 debug pnpm:root: 
+    added: 
+      dependencyType: "dev"
+      id: "registry.npmjs.org/vite/2.9.18"
+      name: "vite"
+      realName: "vite"
+      version: "2.9.18"
+    prefix: "/app"
+  133 debug pnpm:root: 
+    added: 
+      dependencyType: "prod"
+      id: "registry.npmjs.org/three/0.128.0"
+      name: "three"
+      realName: "three"
+      version: "0.128.0"
+    prefix: "/app"
+  134 debug pnpm:package-json: 
+    prefix: "/app"
+    updated: 
+      name: "three-demo"
+      version: "0.0.0"
+      scripts: 
+        dev: "vite"
+        build: "vite build"
+        serve: "vite preview"
+      devDependencies: 
+        vite: "^2.3.0"
+      dependencies: 
+        three: "^0.128.0"
+      gitHead: "34f5dfe0a35cffd625a885d55598b96eff1c9d3c"
+      readme: "ERROR: No README data found!"
+      _id: "three-demo@0.0.0"
+  135 debug pnpm:lifecycle: 
+    depPath: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    optional: false
+    script: "node install.js"
+    stage: "postinstall"
+    wd: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+  136 debug pnpm:lifecycle: 
+    depPath: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    line: "[esbuild] Failed to find package \"esbuild-linux-64\" on the file system"
+    stage: "postinstall"
+    stdio: "stderr"
+    wd: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+  137 debug pnpm:lifecycle: 
+    depPath: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    line: "This can happen if you use the \"--no-optional\" flag. The \"optionalDependencies\""
+    stage: "postinstall"
+    stdio: "stderr"
+    wd: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+  138 debug pnpm:lifecycle: 
+    depPath: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    line: "package.json feature is used by esbuild to install the correct binary executable"
+    stage: "postinstall"
+    stdio: "stderr"
+    wd: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+  139 debug pnpm:lifecycle: 
+    depPath: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    line: "for your current platform. This install script will now attempt to work around"
+    stage: "postinstall"
+    stdio: "stderr"
+    wd: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+  140 debug pnpm:lifecycle: 
+    depPath: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    line: "this. If that fails, you need to remove the \"--no-optional\" flag to use esbuild."
+    stage: "postinstall"
+    stdio: "stderr"
+    wd: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+  141 debug pnpm:lifecycle: 
+    depPath: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"
+    line: "[esbuild] Trying to install package \"esbuild-linux-64\" using npm"
+    stage: "postinstall"
+    stdio: "stderr"
+    wd: "/rbd/pnpm-volume/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/node_modules/.registry.npmjs.org/esbuild/0.14.54/node_modules/esbuild"

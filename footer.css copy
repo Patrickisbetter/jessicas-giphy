@@ -1,0 +1,216 @@
+:root {
+  --primary: #ff6a3e;
+  --primaryLight: #ffba43;
+  --secondary: #ffba43;
+  --secondaryLight: #ffba43;
+  --headerColor: #1a1a1a;
+  --bodyTextColor: #4e4b66;
+  --bodyTextColorWhite: #fafbfc;
+
+  --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.85) 75%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("https://cdn.glitch.global/5bc91e3e-6ff2-41a1-8693-14aa8f6fdb42/space.jpg?v=1745878371202");
+  background-size: cover;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 7rem 1rem;
+  color: var(--bodyTextColorWhite);
+  width: 100%;
+  position: relative;
+  padding-top: 12rem !important;
+}
+
+.cs-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.cs-nav,
+.cs-social,
+.cs-contact {
+  width: 30%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.cs-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--bodyTextColorWhite);
+}
+
+.cs-nav ul,
+.cs-social ul,
+.cs-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cs-nav li,
+.cs-social li,
+.cs-contact li {
+  margin-bottom: 0.5rem;
+}
+
+.cs-nav a,
+.cs-social a,
+.cs-contact a {
+  color: var(--bodyTextColorWhite);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.cs-nav a:hover,
+.cs-social a:hover,
+.cs-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Newsletter Section */
+.cs-newsletter {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cs-newsletter h5 {
+  color: var(--bodyTextColorWhite);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.cs-newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cs-newsletter input {
+  width: 50%;
+  padding: 0.5rem;
+  border: 1px solid #ffffff;
+  color: #ffffffff;
+  background: transparent;
+  border-radius: 1rem;
+}
+
+.cs-newsletter button {
+  padding: 0.5rem 1rem;
+  color: white !important;
+  background-color: transparent !important;
+  border: 2px solid black !important;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cs-newsletter button:hover {
+  background-color: var(--primaryLight);
+  transform: translateY(-0.1875rem);
+}
+
+/* Mobile - 360px */
+@media only screen and (max-width: 768px) {
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .cs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cs-nav,
+  .cs-social,
+  .cs-contact {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cs-newsletter {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .cs-newsletter input {
+    width: 80%;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .cs-container {
+    flex-wrap: nowrap;
+  }
+  .cs-nav,
+  .cs-social,
+  .cs-contact {
+    width: 30%;
+  }
+}
+
+/* Larger Screens */
+@media only screen and (min-width: 1200px) {
+  .cs-container {
+    max-width: 1200px;
+  }
+}
+
+.cs-newsletter button {
+  padding: 0.8rem 2.2rem;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.icon {
+  vertical-align: -3px;
+  margin-right: 2px;
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+.icon-ig {
+  vertical-align: -3px;
+  margin-right: 0px;
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-ig:hover {
+  transform: scale(1.2);
+}
